@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block title %}Ajouter Article{% endblock %}
+
+{% block body %}
+<h2> ajout un article </h2>
+ {{ form_start (f) }}
+    {{ form_widget (f)}}
+{{ form_end (f)}}
+{% endblock %}

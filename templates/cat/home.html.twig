@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<h2>liste des Livres | <small> <a href="{{ path('Ajouter') }}">Ajouter</a></small></h2>
+
+<table class="table table-hover table-striped" border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>libelle</th>
+        <th>Prix</th>
+        <th>Auteur</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for article in lesArticle %}
+        <tr>
+            <td>{{ article.id }}</td>
+            <td>{{ article.libelle }}</td>
+            <td>{{ article.prix }}</td>
+            <td>{{ article.auteur }}</td>
+            <td>
+                <a class="btn btn-primary" href="#">voire</a>
+                <a class="btn btn-info" href="{{ path('edit_user', {'id':article.id})}}">Modifier</a>
+               <a class="btn btn-danger" href="{{path('cand_delete', {'id':article.id})}}" onclick="return confirm('are you sure to delete {{article.libelle }}')">Supprimer</a>
+            
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

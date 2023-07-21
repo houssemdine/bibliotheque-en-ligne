@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+{% block title %} {{ parent() }} - Edit{% endblock %}
+
+{% block body %}
+<h1>Categorie de livres</h1><br>
+<h1> {{ categorie.getNomCategorie() }}</h1><br>
+
+
+
+{% if categorie.image is not null %}
+<img src="{{publicPath ~ cat.image}}" >
+    
+{% endif %}
+
+<h3>Livres</h3>
+<ul class="nav nav-pills nav-stacked">
+{% for article in listeArticle%}
+<h4>livres</h4>
+<li>{{article.libelle}}</li>
+<li>{{article.prix}}</li>
+<li>{{article.auteur}}</li>
+{% endfor %}
+
+{% endblock %}

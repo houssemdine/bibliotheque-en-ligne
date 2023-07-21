@@ -1,0 +1,25 @@
+body {
+    background-color: rgba(105, 52, 1, 0.678);
+    }
+    h1{
+    color:rgb(255, 255, 255);
+    }
+
+html, body {
+
+  margin: 0;
+  padding: 0;
+}
+
+.image-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-height-image {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}

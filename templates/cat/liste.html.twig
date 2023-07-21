@@ -1,0 +1,34 @@
+
+
+{% extends "base.html.twig" %}
+{% block body %}
+
+    <h2>liste des categorie | <small> <a href="{{ path('Ajouter_cat') }}">Ajouter</a></small></h2>
+    {% for msg in app.flashes('notice') %} {{ msg }} {% endfor %}
+    {{ form_start(form1) }}
+    {{ form_widget(form1) }}
+    {{ form_end(form1) }}
+    <table class="table table-hover table-striped" border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>nom categorie</th>
+         
+        </tr>
+        </thead>
+        <tbody>
+        {% for categorie in lesCategories %}
+            <tr>
+                <td>{{ categorie.id }}</td>
+                <td>{{ categorie.nomcategorie }}</td>
+               
+
+                <td>
+                    
+                    <a class="btn btn-success"  href="categorie/{{categorie.id}}">voir</a>
+                           </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
